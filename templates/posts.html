@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="content">
+
+        <div class="logo_box">
+            <img src="{% static 'img/techis-logo.png' %}" id='techis_logo' alt="">
+            <h1 id="home">Home</h1>
+        </div>
+
+        <section class="post_form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input id="name_box" type="text" name="name" placeholder="Name" required>
+                <textarea name="body" placeholder="Tell us anything..." required></textarea>
+                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Tweet</button>
+            </form>
+        </section>
+
+        <section class="posts">
+            <ul>
+                {% for post in posts %}
+
+                    <li>
+                        <img src="{% static 'img/option.png' %}" class='menu_icon' alt="">
+                        <div class="menu">
+                            <a href="/edit/{{post.id}}/" class="menu_edit_lnk">Edit</a>
+                            <br>
+                            <a href="/delete/{{post.id}}/" class="menu_delete_lnk">Delete</a>
+                        </div>
+                      
+                        <div class="logo">
+                            <img src="{% static 'img/user.png' %}" alt="">
+                        </div>
+
+                        <div class="name_body">
+                            <div class="name">{{post.name}}</div>
+                            <div class="datetime">{{post.created_at}}</div>
+                            <p>{{post.body}}</p>
+                            
+                            <img src="static/img/empty_heart.png" alt="">
+                        </div>
+                    </li>
+    
+                {% endfor %}
+            </ul>
+        </section>
+        <script src="{% static 'js/posts.js' %}"></script>
+    </section>
+{% endblock %}

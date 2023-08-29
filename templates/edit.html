@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="content">
+
+    <div class="logo_box">
+        <img src="{% static 'img/techis-logo.png' %}" id='techis_logo' alt="">
+        <h1 id="home">Edit</h1>
+    </div>
+
+    <section class="post_form">
+        <form action="/edit/{{posts.id}}/" method="POST">
+           
+            {% csrf_token %}
+            <input id="name_box" type="text" name="name" placeholder="Name" value="{{posts.name}}" required>
+            <textarea name="body" placeholder="Tell us anything..." maxlength="14">{{posts.body}}</textarea> 
+            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+            <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon03">
+                <a href="/"></a>
+                Cancel
+            </button>
+            <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Update</button>
+            <!-- <input type="submit" value="Post"> -->
+        </form>
+    </section>
+
+    <section class="posts">
+        
+    <script src="{% static 'js/posts.js' %}"></script>
+</section>
+{% endblock %}

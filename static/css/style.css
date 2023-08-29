@@ -1,0 +1,166 @@
+/***********
+  Common
+************/
+html,
+body {
+    height: 100%;
+}
+
+.content {
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    
+}
+
+
+/***********
+ Posts
+************/
+
+.content .logo_box {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.content #techis_logo {
+    width: 60px;
+    color: blue;
+}
+
+.content #home {
+    display: inline;
+    position: absolute;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.post_form {
+    padding: 20px 40px;
+    border-bottom: 1px solid #ccc;
+} 
+
+.post_form img{
+    /* position: absolute; */
+    width: 50px;
+    margin: 10px;
+} 
+
+.post_form input {
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.post_form #name_box {
+    border: 1px solid transparent;
+    background-color: #e6fef7;
+}
+
+.post_form textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid transparent;
+    
+}
+
+.post_form textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid transparent;
+    
+}
+
+/* .post_form #inputGroupFile04 {
+    width: 50%;
+    height: 10px;
+} */
+
+.post_form .btn{
+    height: 35px;
+    padding: 10px;
+    background-color: rgb(29, 161, 242);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    margin-left: 65px;
+}
+
+.posts ul{
+    padding: 0;
+}
+
+.post_form img{
+    vertical-align: middle;
+}
+
+.posts li {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 17px;
+    position: relative;
+}
+
+.posts li .menu_icon {
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    right: 18px;
+}
+
+.posts li .menu {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 40px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 3px;;
+}
+
+.posts li .menu a{
+    text-decoration: none;
+}
+
+.posts li .menu a:visited{
+    text-decoration: none;
+    color: #0000EE
+}
+
+.posts li .logo{
+    flex-basis: 15%;
+}
+
+.posts li img {
+    width: 60%;
+}
+
+.posts li .name_body {
+    flex-basis: 85%;
+}
+
+.posts li .name_body .name {
+    font-weight: bold;
+}
+
+.posts li .name_body .datetime {
+    color: grey;
+}
+
+
+@media screen and (max-width: 500px) {
+    .posts li .name_body .name {
+        font-size: 20px;
+    }
+}
