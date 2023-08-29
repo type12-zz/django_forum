@@ -158,6 +158,17 @@ body {
     color: grey;
 }
 
+.posts li .name_body .like-icon {
+    width: 5%;
+}
+
+.posts li .name_body .numOfLikes {
+    position: relative;
+    bottom: 5px;
+
+    font-size: 19px;
+}
+
 
 @media screen and (max-width: 500px) {
     .posts li .name_body .name {
