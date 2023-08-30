@@ -11,6 +11,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
+
+# Import the Cloudinary libraries
+# ==============================
+import cloudinary.uploader
+import cloudinary.api
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,6 +39,8 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'posts',
+    'cloudinary',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,3 +135,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Cloudinary
+cloudinary.config( 
+  cloud_name = "dr3fuhcrx", 
+  api_key = "854156532273685", 
+  api_secret = "aUePbBXonFc82Xh4GJzQE_v_x_o" ,
+  secure=True
+)

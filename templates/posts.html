@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% load cloudinary %}      
+<!-- {% cloudinary post.image format="png" width=120 height=80 crop="fill" %} -->
+
 {% block content %}
     <section class="content">
 
@@ -10,11 +13,11 @@
         </div>
 
         <section class="post_form">
-            <form action="" method="POST">
+            <form action="/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <input id="name_box" type="text" name="name" placeholder="Name" required>
                 <textarea name="body" placeholder="Tell us anything..." required></textarea>
-                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                <input type="file" name="image" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                 <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Tweet</button>
             </form>
         </section>
@@ -39,6 +42,7 @@
                             <div class="name">{{post.name}}</div>
                             <div class="datetime">{{post.created_at}}</div>
                             <p>{{post.body}}</p>
+                            <img src="{{post.image.url}}" alt="" class='post-img'>
                             
                             <img src="static/img/empty_heart.png" alt="" class="like-icon"> 
                             <span class="numOfLikes">0</span>

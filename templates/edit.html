@@ -10,12 +10,12 @@
     </div>
 
     <section class="post_form">
-        <form action="/edit/{{posts.id}}/" method="POST">
+        <form action="/edit/{{posts.id}}/" method="POST" enctype="multipart/form-data">
            
             {% csrf_token %}
             <input id="name_box" type="text" name="name" placeholder="Name" value="{{posts.name}}" required>
             <textarea name="body" placeholder="Tell us anything..." maxlength="14">{{posts.body}}</textarea> 
-            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+            <input type="file" name="image" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
             <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon03">
                 <a href="/"></a>
                 Cancel
